@@ -26,18 +26,27 @@ const TopNotificationBar = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white text-gray-800 text-xs md:text-sm flex flex-col md:flex-row items-center justify-between px-4 py-2 font-medium shadow z-50">
-      <div className="flex items-center gap-2">
+    <div className="w-full bg-white text-gray-800 text-xs sm:text-sm flex flex-col sm:flex-row items-center justify-between px-3 sm:px-4 py-2 font-medium shadow z-50">
+      <div className="flex items-center gap-2 mb-1 sm:mb-0">
         <span className="inline-block w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-        <span className="text-yellow-600 font-semibold">Only 10 Spots remaining</span>
+        <span className="text-yellow-600 font-semibold text-xs sm:text-sm">Only 10 Spots remaining</span>
       </div>
-      <div className="flex items-center gap-2 mt-1 md:mt-0">
-        <span className="font-semibold text-gray-800">Limited Time Offer Ends In:</span>
+      <div className="flex items-center gap-1 sm:gap-2">
+        <span className="font-semibold text-gray-800 text-xs sm:text-sm hidden sm:inline">Limited Time Offer Ends In:</span>
+        <span className="font-semibold text-gray-800 text-xs sm:text-sm sm:hidden">Ends In:</span>
         <div className="flex gap-1">
-          <span className="bg-red-600 text-white px-2 py-1 rounded font-bold min-w-[32px] text-center">{timeLeft.days.toString().padStart(2, '0')}d</span>
-          <span className="bg-red-600 text-white px-2 py-1 rounded font-bold min-w-[32px] text-center">{timeLeft.hours.toString().padStart(2, '0')}h</span>
-          <span className="bg-red-600 text-white px-2 py-1 rounded font-bold min-w-[32px] text-center">{timeLeft.minutes.toString().padStart(2, '0')}m</span>
-          <span className="bg-red-600 text-white px-2 py-1 rounded font-bold min-w-[32px] text-center">{timeLeft.seconds.toString().padStart(2, '0')}s</span>
+          <span className="bg-red-600 text-white px-1 sm:px-2 py-1 rounded font-bold min-w-[24px] sm:min-w-[32px] text-center text-xs">
+            {timeLeft.days.toString().padStart(2, '0')}d
+          </span>
+          <span className="bg-red-600 text-white px-1 sm:px-2 py-1 rounded font-bold min-w-[24px] sm:min-w-[32px] text-center text-xs">
+            {timeLeft.hours.toString().padStart(2, '0')}h
+          </span>
+          <span className="bg-red-600 text-white px-1 sm:px-2 py-1 rounded font-bold min-w-[24px] sm:min-w-[32px] text-center text-xs">
+            {timeLeft.minutes.toString().padStart(2, '0')}m
+          </span>
+          <span className="bg-red-600 text-white px-1 sm:px-2 py-1 rounded font-bold min-w-[24px] sm:min-w-[32px] text-center text-xs">
+            {timeLeft.seconds.toString().padStart(2, '0')}s
+          </span>
         </div>
       </div>
     </div>
