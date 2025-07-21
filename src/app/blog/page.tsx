@@ -26,7 +26,7 @@ export default function BlogPage() {
           </h1>
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-center text-white mb-10 max-w-2xl" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}>
-            Expert insights, proven strategies, and real success stories from leaders who've achieved $100K+ results.
+            Expert insights, proven strategies, and real success stories from leaders who&apos;ve achieved $100K+ results.
           </p>
           {/* Search Bar */}
           <div className="w-full max-w-xl mb-8">

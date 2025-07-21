@@ -22,7 +22,7 @@ export default function AboutPage() {
               <span className="text-yellow-400 block">Elevating Results</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-center text-white mb-8 sm:mb-10 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Roboto, sans-serif' }}>
-              We are the catalyst for extraordinary business transformation. Our proven methodologies don't just improve performance—they revolutionize how leaders think, act, and achieve.
+              We are the catalyst for extraordinary business transformation. Our proven methodologies don&apos;t just improve performance—they revolutionize how leaders think, act, and achieve.
             </p>
           </div>
           {/* Mission Card */}

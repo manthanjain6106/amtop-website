@@ -119,7 +119,7 @@ const Services = () => {
               Ready to Get Started?
             </h3>
             <p className="text-blue-100 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-              Let's discuss how we can help transform your business with our innovative solutions.
+              Let&apos;s discuss how we can help transform your business with our innovative solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
               <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-colors duration-300">

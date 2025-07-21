@@ -5,7 +5,7 @@ const WorkingProcess = () => {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Lora, serif' }}>
-            Here's our working Process
+            Here&apos;s our working Process
           </h2>
         </div>
 

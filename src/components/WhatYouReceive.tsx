@@ -40,7 +40,7 @@ const WhatYouReceive = () => {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Lora, serif' }}>
-            What You'll Receive in This{" "}
+            What You&apos;ll Receive in This{" "}
             <span className="text-yellow-500">Exclusive Program</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4" style={{ fontFamily: 'Roboto, sans-serif' }}>

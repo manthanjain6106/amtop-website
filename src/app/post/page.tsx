@@ -21,7 +21,7 @@ export default function PostPage() {
             <span className="text-[#F7C948]">Million-Dollar eBook Empire</span>
           </h1>
           <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}>
-            We are the catalyst for extraordinary business transformation. Our proven methodologies don't just improve performance—they revolutionize how leaders think, act, and achieve.
+            We are the catalyst for extraordinary business transformation. Our proven methodologies don&apos;t just improve performance—they revolutionize how leaders think, act, and achieve.
           </p>
         </div>
       </div>

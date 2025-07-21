@@ -132,7 +132,7 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto">
             {/* Section Title */}
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-20 text-center text-gray-900" style={{ fontFamily: 'Source Serif Pro, serif', fontWeight: 700 }}>
-              Here's What You'll Experience
+              Here&apos;s What You&apos;ll Experience
             </h2>
 
             {/* Vertical Zig-Zag Layout */}
