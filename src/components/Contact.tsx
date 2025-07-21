@@ -8,7 +8,7 @@ const Contact = () => {
             Get in <span className="text-blue-600">Touch</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Ready to start your next project? Let's discuss how we can help bring your vision to life.
+            Ready to start your next project? Let&apos;s discuss how we can help bring your vision to life.
           </p>
         </div>
 
@@ -16,7 +16,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="order-2 lg:order-1">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">
-              Let's Start a Conversation
+              Let&apos;s Start a Conversation
             </h3>
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-start">

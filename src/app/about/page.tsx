@@ -95,7 +95,7 @@ export default function AboutPage() {
               </svg>
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-[#1B1C2B] mb-2 sm:mb-3" style={{ fontFamily: 'Lora, serif' }}>Results-Driven</h3>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed" style={{ fontFamily: 'Roboto, sans-serif' }}>We don't just teach theory - we deliver measurable outcomes that transform your business</p>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed" style={{ fontFamily: 'Roboto, sans-serif' }}>We don&apos;t just teach theory - we deliver measurable outcomes that transform your business</p>
           </div>
           {/* People-First */}
           <div className="bg-white rounded-xl sm:rounded-2xl shadow-md p-6 sm:p-8 flex flex-col items-center text-center transition hover:shadow-lg">
