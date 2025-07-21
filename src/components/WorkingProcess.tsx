@@ -1,41 +1,33 @@
 const WorkingProcess = () => {
-  const processSteps = [
-    "Complete Program Commitment",
-    "Active Implementation", 
-    "Regular Check-ins",
-    "$100K Sales Goal"
-  ];
-
   return (
     <section className="py-12 sm:py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Lora, serif' }}>
             Here's our working Process
           </h2>
         </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Left Section - Process Steps */}
-          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex items-start space-x-3 sm:space-x-4">
-                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-yellow-500 rounded-full flex-shrink-0 mt-1 sm:mt-2"></div>
-                <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900">
-                  {step}
-                </p>
-              </div>
-            ))}
+        {/* Video Placeholder */}
+        <div className="flex justify-center mb-8 sm:mb-10">
+          <div className="w-full max-w-2xl h-64 sm:h-80 bg-gray-300 rounded-lg border-2 border-gray-400 flex items-center justify-center">
+            <span className="text-xl sm:text-2xl font-bold text-gray-700">Video</span>
           </div>
+        </div>
 
-          {/* Right Section - Video Placeholder */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="w-full max-w-md h-48 sm:h-64 bg-gray-300 rounded-lg border-2 border-gray-400 flex items-center justify-center">
-              <span className="text-lg sm:text-2xl font-bold text-gray-700">Video</span>
-            </div>
-          </div>
+        {/* Description */}
+        <div className="text-center mb-8 sm:mb-10">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            A comprehensive leadership transformation system designed to guarantee your success - or you get every penny back.
+          </p>
+        </div>
+
+        {/* Call to Action Button */}
+        <div className="text-center">
+          <button className="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg border-2 border-yellow-400 transition-colors duration-300">
+            Book Your Session Now
+          </button>
         </div>
       </div>
     </section>

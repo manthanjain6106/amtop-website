@@ -87,9 +87,17 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 sm:mb-6 text-blue-600">
-                {service.icon}
+            <div
+              key={index}
+              className={`bg-white rounded-lg p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 ${index < 3 ? 'w-full md:w-72 h-72 flex flex-col items-center justify-start' : ''}`}
+            >
+              <div className="w-16 h-16 flex items-center justify-center mb-4 sm:mb-6">
+                {index === 0 ? (
+                  <svg fill="#000000" viewBox="0 0 24 24" width="56" height="56" xmlns="http://www.w3.org/2000/svg" style={{ transform: 'scaleX(-1)' }}>
+                    <path d="M21.92,5.62A1,1,0,0,0,21,5H19V3a1,1,0,0,0-.62-.92,1,1,0,0,0-1.09.21l-3,3A1,1,0,0,0,14,6V8.59l-2.21,2.2a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L15.41,10H18a1,1,0,0,0,.71-.29l3-3A1,1,0,0,0,21.92,5.62Z" fill="#2ca9bc"/>
+                    <path d="M12,22A10,10,0,0,1,12,2h.42a1,1,0,1,1-.18,2H12a8,8,0,1,0,8,8,1.93,1.93,0,0,0,0-.24,1,1,0,0,1,.91-1.09,1,1,0,0,1,1.09.91c0,.14,0,.28,0,.42A10,10,0,0,1,12,22Zm5.88-8.8a1,1,0,0,0-2-.4A4,4,0,1,1,11.2,8.08a1,1,0,1,0-.4-2,6,6,0,1,0,7.08,7.08Z" fill="#000"/>
+                  </svg>
+                ) : service.icon}
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                 {service.title}

@@ -147,9 +147,17 @@ html {
 }
 
 /* Focus styles for better accessibility */
-*:focus {
+button:focus, a:focus, input:focus, select:focus, textarea:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Remove default blue outline on focus for buttons, links, and images */
+button:focus, button:active,
+a:focus, a:active,
+img:focus, img:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Custom animations */

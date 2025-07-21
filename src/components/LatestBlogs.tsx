@@ -39,10 +39,10 @@ const LatestBlogs = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Roboto, sans-serif' }}>
             Latest Blogs
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600" style={{ fontFamily: 'Roboto, sans-serif' }}>
             Catch up with the latest updates.
           </p>
         </div>
@@ -52,13 +52,13 @@ const LatestBlogs = () => {
           {/* Left Section - Text Content */}
           <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
             <div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 border-b border-gray-300 pb-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 border-b border-gray-300 pb-2" style={{ fontFamily: 'Secular One, sans-serif' }}>
                 Understanding AI
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" style={{ fontFamily: 'Roboto, sans-serif' }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <p className="text-sm sm:text-base text-gray-800 font-medium mb-3 sm:mb-4">
+              <p className="text-sm sm:text-base text-gray-800 font-medium mb-3 sm:mb-4" style={{ fontFamily: 'Roboto, sans-serif' }}>
                 Discover the mechanisms behind AI......
               </p>
             </div>

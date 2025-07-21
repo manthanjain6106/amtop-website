@@ -12,17 +12,17 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-[#1B1C2B] text-white shadow flex items-center justify-between px-4 md:px-8 lg:px-12 h-16 z-40 relative">
+    <nav className="fixed top-0 left-0 w-full bg-[#1B1C2B] text-white shadow flex items-center justify-between px-4 md:px-8 lg:px-12 h-16 z-50 top-[80px] sm:top-[80px] md:top-[70px] lg:top-[60px]">
       {/* Logo */}
-      <div className="flex items-center">
+      <Link href="/" className="flex items-center">
         <Image 
           src="/images/logo.png" 
           alt="amTop Logo" 
-          width={70} 
-          height={70} 
-          className="h-12 w-auto md:h-15" 
+          width={90} 
+          height={90} 
+          className="h-14 w-auto md:h-16 lg:h-18" 
         />
-      </div>
+      </Link>
       
       {/* Desktop Nav Links */}
       <div className="hidden md:flex gap-6 lg:gap-8 items-center">
@@ -34,7 +34,7 @@ const Navbar = () => {
       
       {/* Desktop CTA Button */}
       <div className="hidden md:flex items-center">
-        <button className="bg-yellow-400 text-[#1B1C2B] font-semibold px-3 py-2 lg:px-4 lg:py-2 rounded shadow hover:bg-yellow-300 transition-colors duration-200 text-xs lg:text-sm">
+        <button className="bg-white text-[#1B1C2B] font-semibold px-3 py-2 lg:px-4 lg:py-2 rounded shadow hover:bg-gray-100 transition-colors duration-200 text-xs lg:text-sm">
           Claim Your Spot Now
         </button>
       </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-[#1B1C2B] shadow-lg md:hidden z-50">
+        <div className="absolute top-16 left-0 right-0 bg-[#1B1C2B] shadow-lg md:hidden z-50" style={{ top: '96px' }}>
           <div className="flex flex-col px-4 py-6 space-y-4">
             <Link 
               href="/about" 
@@ -102,7 +102,7 @@ const Navbar = () => {
               Service
             </Link>
             <div className="pt-4">
-              <button className="w-full bg-yellow-400 text-[#1B1C2B] font-semibold py-3 px-4 rounded shadow hover:bg-yellow-300 transition-colors duration-200 text-sm">
+              <button className="w-full bg-white text-[#1B1C2B] font-semibold py-3 px-4 rounded shadow hover:bg-gray-100 transition-colors duration-200 text-sm">
                 Claim Your Spot Now
               </button>
             </div>
