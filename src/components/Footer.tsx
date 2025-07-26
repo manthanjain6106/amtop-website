@@ -27,16 +27,14 @@ const Footer = () => {
         <div className="flex flex-col lg:items-end gap-4 sm:gap-6">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <div className="flex flex-col items-center">
-              <button className="w-full sm:w-48 md:w-56 h-12 sm:h-14 border-2 border-[#B6C2E2] rounded-lg bg-[#F5F2F2] text-black text-lg sm:text-xl md:text-2xl font-bold tracking-widest shadow-md mb-2 hover:bg-gray-200 transition-colors duration-200">
+              <button className="w-full sm:w-48 md:w-56 h-12 sm:h-14 border-2 border-[#B6C2E2] rounded-lg bg-[#F5F2F2] text-black text-lg sm:text-xl md:text-2xl font-bold tracking-widest shadow-md hover:bg-gray-200 transition-colors duration-200">
                 YouTube
               </button>
-              <span className="text-sm sm:text-base">10K member</span>
             </div>
             <div className="flex flex-col items-center">
-              <button className="w-full sm:w-48 md:w-56 h-12 sm:h-14 border-2 border-[#B6C2E2] rounded-lg bg-[#F5F2F2] text-black text-lg sm:text-xl md:text-2xl font-bold tracking-widest shadow-md mb-2 hover:bg-gray-200 transition-colors duration-200">
+              <button className="w-full sm:w-48 md:w-56 h-12 sm:h-14 border-2 border-[#B6C2E2] rounded-lg bg-[#F5F2F2] text-black text-lg sm:text-xl md:text-2xl font-bold tracking-widest shadow-md hover:bg-gray-200 transition-colors duration-200">
                 LinkedIn
               </button>
-              <span className="text-sm sm:text-base">10K member</span>
             </div>
           </div>
         </div>

@@ -1,14 +1,9 @@
 const ExpertCredentials = () => {
   const experts = [
     {
-      name: "YU-KAI",
+      name: "YU-KAI CHOU",
       image: "/images/yu-kai.png",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    {
-      name: "MARK DIAZ",
-      image: "/images/mark-diaz.png",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      description: "Lorem ipsum dolor sit amet consectetur. Egestas amet aliquam convallis lobortis at condimentum et nam aliquet. Pellentesque turpis consectetur purus neque lectus tellus egestas egestas. Lorem ipsum dolor sit amet consectetur. Egestas amet aliquam convallis lobortis at condimentum et nam aliquet. Pellentesque turpis consectetur purus neque lectus tellus egestas egestas."
     }
   ];
 
@@ -23,18 +18,19 @@ const ExpertCredentials = () => {
         </div>
 
         {/* Expert Profiles */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="max-w-4xl mx-auto">
           {experts.map((expert, index) => (
-            <div key={index} className="text-center">
+            <div key={index}>
               {/* Name */}
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-4 sm:mb-6 tracking-wider" style={{ fontFamily: 'Lora, serif' }}>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-400 mb-6 sm:mb-8 tracking-wider text-left" style={{ fontFamily: 'Lora, serif' }}>
                 {expert.name}
               </h3>
               
-              {/* Image */}
-              <div className="mb-4 sm:mb-6">
-                <div className="relative inline-block">
-                  <div className="w-64 h-48 sm:w-80 sm:h-60 md:w-96 md:h-72 rounded-lg overflow-hidden shadow-[0_0_15px_rgba(251,191,36,0.3)] sm:shadow-[0_0_18px_rgba(251,191,36,0.3)] md:shadow-[0_0_20px_rgba(251,191,36,0.3)] lg:shadow-[0_0_22px_rgba(251,191,36,0.3)]">
+              {/* Content - Image and Text Side by Side */}
+              <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
+                {/* Image */}
+                <div className="flex-shrink-0">
+                  <div className="w-80 h-60 sm:w-96 sm:h-72 rounded-lg overflow-hidden shadow-[0_0_15px_rgba(251,191,36,0.3)] sm:shadow-[0_0_18px_rgba(251,191,36,0.3)]">
                     <img 
                       src={expert.image} 
                       alt={expert.name}
@@ -43,13 +39,13 @@ const ExpertCredentials = () => {
                     />
                   </div>
                 </div>
-              </div>
-              
-              {/* Description */}
-              <div className="text-left">
-                <p className="text-sm sm:text-base text-gray-200 leading-relaxed" style={{ fontFamily: 'Roboto, sans-serif' }}>
-                  {expert.description}
-                </p>
+                
+                {/* Description */}
+                <div className="flex-1">
+                  <p className="text-base sm:text-lg text-gray-200 leading-relaxed" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                    {expert.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

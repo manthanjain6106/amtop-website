@@ -113,8 +113,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#1B1C2B]">Understanding AI</h3>
+                <h3 className="text-xl font-bold text-[#1B1C2B] mb-2">Understanding AI</h3>
+                <div className="mb-3">
                   <span className="bg-gray-200 rounded px-3 py-1 text-sm font-semibold text-[#1B1C2B]">Team Management</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-3">December 15, 2024</p>
@@ -139,8 +139,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#1B1C2B]">Leadership Strategies</h3>
+                <h3 className="text-xl font-bold text-[#1B1C2B] mb-2">Leadership Strategies</h3>
+                <div className="mb-3">
                   <span className="bg-gray-200 rounded px-3 py-1 text-sm font-semibold text-[#1B1C2B]">Leadership</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-3">December 14, 2024</p>
@@ -165,8 +165,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#1B1C2B]">Growth Tactics</h3>
+                <h3 className="text-xl font-bold text-[#1B1C2B] mb-2">Growth Tactics</h3>
+                <div className="mb-3">
                   <span className="bg-gray-200 rounded px-3 py-1 text-sm font-semibold text-[#1B1C2B]">Growth</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-3">December 13, 2024</p>
@@ -191,8 +191,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#1B1C2B]">Sales Strategy</h3>
+                <h3 className="text-xl font-bold text-[#1B1C2B] mb-2">Sales Strategy</h3>
+                <div className="mb-3">
                   <span className="bg-gray-200 rounded px-3 py-1 text-sm font-semibold text-[#1B1C2B]">Sale Strategy</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-3">December 12, 2024</p>
@@ -217,8 +217,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#1B1C2B]">Team Building</h3>
+                <h3 className="text-xl font-bold text-[#1B1C2B] mb-2">Team Building</h3>
+                <div className="mb-3">
                   <span className="bg-gray-200 rounded px-3 py-1 text-sm font-semibold text-[#1B1C2B]">Team Management</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-3">December 11, 2024</p>
@@ -244,8 +244,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#1B1C2B]">Digital Marketing</h3>
+                <h3 className="text-xl font-bold text-[#1B1C2B] mb-2">Digital Marketing</h3>
+                <div className="mb-3">
                   <span className="bg-gray-200 rounded px-3 py-1 text-sm font-semibold text-[#1B1C2B]">Growth</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-3">December 10, 2024</p>

@@ -25,42 +25,10 @@ export default function AboutPage() {
               We are the catalyst for extraordinary business transformation. Our proven methodologies don&apos;t just improve performance—they revolutionize how leaders think, act, and achieve.
             </p>
           </div>
-          {/* Mission Card */}
-          <div className="bg-[#5B5B7B]/40 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-sm sm:max-w-md md:max-w-xl w-full flex flex-col items-center shadow-lg backdrop-blur-md mx-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 text-center" style={{ fontFamily: 'Roboto, sans-serif' }}>Our Mission</h2>
-            <div className="mb-3 sm:mb-4 flex items-center justify-center">
-              <span className="bg-yellow-400 rounded-full p-3 sm:p-4 flex items-center justify-center">
-                {/* Improved mountain with flag mission icon */}
-                <svg className="w-10 h-10 sm:w-12 sm:h-12 text-white" viewBox="0 0 48 48" fill="none">
-                  <g>
-                    {/* Mountain base */}
-                    <path
-                      d="M8 40c-1.1 0-2-.9-2-2 0-.37.1-.73.3-1.04l14-21c.37-.56 1.13-.71 1.67-.34.13.09.25.21.34.34l14 21c.6.91-.04 2.04-1.13 2.04H8z"
-                      fill="currentColor"
-                    />
-                    {/* Mountain detail (snow cap) */}
-                    <path
-                      d="M18 32l6-4 6 4"
-                      stroke="#fff"
-                      strokeWidth="2"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                    {/* Flag pole */}
-                    <rect x="23" y="10" width="2" height="10" rx="1" fill="#fff"/>
-                    {/* Flag */}
-                    <path
-                      d="M25 10l6 2-6 2V10z"
-                      fill="#fff"
-                    />
-                  </g>
-                </svg>
-              </span>
-            </div>
-            <p className="text-white text-sm sm:text-base text-center leading-relaxed" style={{ fontFamily: 'Roboto, sans-serif' }}>
-              To empower business leaders with the tools, strategies, and mindset needed to achieve extraordinary results while building sustainable, people-centered organizations.
-            </p>
-          </div>
+          {/* Action Button */}
+          <button className="bg-[#1B1C2B] hover:bg-[#2A2B3D] text-yellow-400 font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 shadow-lg border-2 border-yellow-400 hover:border-yellow-300">
+            Book A Session
+          </button>
         </div>
       </div>
       {/* Our Story Section */}

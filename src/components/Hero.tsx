@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-300 to-gray-600">
+    <section className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -15,28 +15,34 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif text-white mb-3 sm:mb-4 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-          Online management leadership program
-        </h1>
-        
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif text-white mb-4 sm:mb-6 lg:mb-8 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-          <span className="block sm:inline">
-            Achieve{' '}
-            <span className="text-yellow-400 font-bold">$100,000</span>
-            {' '}in Sales in{' '}
-            <span className="text-yellow-400 font-bold">6 Months</span>
-          </span>
-          {' '}or Get Your Money Back
-        </h1>
-        
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
-          Transform your leadership skills and drive significant revenue growth with our proven online program.
-        </p>
-        
-        <button className="bg-black border-2 border-yellow-400 text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 lg:py-4 lg:px-8 rounded-lg text-sm sm:text-base lg:text-lg transition-all duration-300 hover:bg-gray-900 hover:border-yellow-300 w-full sm:w-auto">
-          Enroll Now
-        </button>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left Column - Text Content */}
+          <div className="text-left max-w-2xl">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-serif text-white leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+              Online management leadership program
+            </h1>
+            
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-serif text-white leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+              Achieve <span className="text-yellow-400 font-bold">$100,000</span> in Sales in <span className="text-yellow-400 font-bold">6 Months</span> or Get Your Money Back
+            </h2>
+            
+            <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg text-2xl sm:text-3xl md:text-4xl lg:text-4xl transition-all duration-300 inline-block mt-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+              Enroll Now
+            </button>
+          </div>
+
+          {/* Right Column - Content Area */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-md lg:max-w-lg h-64 lg:h-80 border-4 border-white rounded-lg bg-black bg-opacity-30 flex items-center justify-center">
+              {/* Placeholder content - you can replace this with video or other content */}
+              <div className="text-white text-center opacity-70">
+                <div className="text-6xl mb-4">▶</div>
+                <p className="text-sm">Video Content</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

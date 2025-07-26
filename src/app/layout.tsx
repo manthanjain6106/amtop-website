@@ -4,6 +4,8 @@ import "./globals.css";
 import TopNotificationBar from "@/components/TopNotificationBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { StagewiseToolbar } from "@stagewise/toolbar-next";
+import ReactPlugin from "@stagewise-plugins/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StagewiseToolbar config={{ plugins: [ReactPlugin] }} />
         <TopNotificationBar />
         <Navbar />
         <main className="min-h-screen">
