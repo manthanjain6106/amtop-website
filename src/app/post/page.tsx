@@ -56,8 +56,8 @@ export default function PostPage() {
         </div>
       </div>
       {/* Parts Section */}
-      <div className="bg-gradient-to-r from-[#C7C8D7] to-[#F3E9D6] w-full py-8 px-12">
-        <div className="space-y-10">
+      <div className="bg-gradient-to-r from-[#C7C8D7] to-[#F3E9D6] w-full py-8 px-6 sm:px-12 lg:px-20">
+        <div className="max-w-4xl mx-auto space-y-10">
           {/* Part 1 */}
           <div>
             <h3 className="font-bold text-black text-xl mb-2" style={{ fontFamily: 'Lora, serif', fontWeight: 700 }}>Part 1 :- Lorem ipsum dolor sit amet consectetur</h3>
