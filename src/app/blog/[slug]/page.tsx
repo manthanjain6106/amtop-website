@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import type { ReactNode } from 'react'
 
 export const revalidate = 0
 export const dynamic = 'force-dynamic'
@@ -10,14 +11,17 @@ type Category = { title?: string }
 type Tag = { title?: string }
 
 type LexicalTextNode = { type: 'text'; text: string }
-type LexicalParagraphNode = { type: 'paragraph'; children?: any[] }
-type LexicalHeadingNode = { type: 'heading'; tag: string; children?: any[] }
-type LexicalListItemNode = { type: 'listitem'; children?: any[] }
+type LexicalUploadValue = { url?: string; alt?: string; caption?: string }
+type LexicalInlineChild = LexicalTextNode | LexicalLinkNode
+type LexicalParagraphNode = { type: 'paragraph'; children?: LexicalInlineChild[] }
+type LexicalHeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type LexicalHeadingNode = { type: 'heading'; tag: LexicalHeadingTag; children?: LexicalTextNode[] }
+type LexicalListItemNode = { type: 'listitem'; children?: LexicalTextNode[] }
 type LexicalListNode = { type: 'list'; listType?: 'bullet' | 'number'; children?: LexicalListItemNode[] }
-type LexicalUploadNode = { type: 'upload'; relationTo?: string; value?: any }
-type LexicalQuoteNode = { type: 'quote' | 'blockquote'; children?: any[] }
-type LexicalLinkNode = { type: 'link'; fields?: { url?: string; newTab?: boolean }; children?: any[] }
-type LexicalRoot = { type: 'root'; children?: Array<LexicalParagraphNode | LexicalHeadingNode | LexicalListNode | LexicalUploadNode | LexicalQuoteNode | LexicalLinkNode | any> }
+type LexicalUploadNode = { type: 'upload'; relationTo?: string; value?: LexicalUploadValue }
+type LexicalQuoteNode = { type: 'quote' | 'blockquote'; children?: LexicalTextNode[] }
+type LexicalLinkNode = { type: 'link'; fields?: { url?: string; newTab?: boolean }; children?: LexicalInlineChild[] }
+type LexicalRoot = { type: 'root'; children?: Array<LexicalParagraphNode | LexicalHeadingNode | LexicalListNode | LexicalUploadNode | LexicalQuoteNode | LexicalLinkNode> }
 
 type Post = {
   id: string
@@ -70,18 +74,21 @@ function formatDate(iso?: string): string {
 }
 
 function getAuthorName(a?: Author | string): string {
-  if (a && typeof a === 'object' && 'name' in a) return (a as any).name || 'Unknown Author'
+  if (a && typeof a === 'object' && 'name' in a) return (a as Author).name || 'Unknown Author'
   return 'Unknown Author'
 }
 
 function getAuthorAvatarUrl(a?: Author | string): string {
-  if (a && typeof a === 'object' && (a as any).avatar?.url) {
-    return toMediaUrl((a as any).avatar.url as string)
+  if (a && typeof a === 'object') {
+    const author = a as Author
+    if (author.avatar?.url) {
+      return toMediaUrl(author.avatar.url)
+    }
   }
   return ''
 }
 
-function renderInline(children: any[] | undefined): any {
+function renderInline(children: LexicalInlineChild[] | undefined): ReactNode {
   if (!Array.isArray(children)) return null
   return children.map((child, i) => {
     if (child?.type === 'text') {
@@ -97,8 +104,6 @@ function renderInline(children: any[] | undefined): any {
         </a>
       )
     }
-    // Fallback: if child has its own children, render their inline content
-    if (Array.isArray(child?.children)) return renderInline(child.children)
     return null
   })
 }
@@ -108,13 +113,13 @@ function renderRichText(content?: { root?: LexicalRoot }) {
   if (!root || !Array.isArray(root.children)) return null
   return root.children.map((node, idx) => {
     if (node.type === 'paragraph') {
-      const hasContent = Array.isArray(node.children) && node.children.some((c: any) => (c?.type === 'text' && c.text?.trim()) || c?.type === 'link' || c?.type === 'upload')
+      const hasContent = Array.isArray(node.children) && node.children.some((c: LexicalInlineChild) => (c?.type === 'text' && (c as LexicalTextNode).text?.trim()) || c?.type === 'link')
       if (!hasContent) return null
       return <p key={idx} className="mb-4 text-black">{renderInline((node as LexicalParagraphNode).children)}</p>
     }
     if (node.type === 'heading') {
-      const text = (node.children || []).map((t: any) => (t?.type === 'text' ? (t as LexicalTextNode).text : '')).join('')
-      const Tag: any = (node as LexicalHeadingNode).tag || 'h2'
+      const text = (node.children || []).map((t: LexicalTextNode) => (t?.type === 'text' ? (t as LexicalTextNode).text : '')).join('')
+      const Tag = (((node as LexicalHeadingNode).tag || 'h2') as LexicalHeadingTag)
       return (
         <Tag key={idx} className="mt-8 mb-3 font-extrabold text-black">
           {text}
@@ -125,7 +130,7 @@ function renderRichText(content?: { root?: LexicalRoot }) {
       const listNode = node as LexicalListNode
       const isOrdered = listNode.listType === 'number'
       const items = (listNode.children || []).map((li, i) => {
-        const itemText = (li.children || []).map((t: any) => (t?.type === 'text' ? (t as LexicalTextNode).text : '')).join('')
+        const itemText = (li.children || []).map((t: LexicalTextNode) => (t?.type === 'text' ? (t as LexicalTextNode).text : '')).join('')
         return <li key={i} className="mb-1">{itemText}</li>
       })
       return isOrdered ? (
@@ -136,7 +141,7 @@ function renderRichText(content?: { root?: LexicalRoot }) {
     }
     if (node.type === 'upload') {
       const upload = node as LexicalUploadNode
-      const media = (upload as any).value
+      const media = upload.value
       const url: string | undefined = media?.url
       if (!url) return null
       return (
@@ -148,7 +153,7 @@ function renderRichText(content?: { root?: LexicalRoot }) {
       )
     }
     if (node.type === 'quote' || node.type === 'blockquote') {
-      const text = (node.children || []).map((t: any) => (t?.type === 'text' ? (t as LexicalTextNode).text : '')).join('')
+      const text = (node.children || []).map((t: LexicalTextNode) => (t?.type === 'text' ? (t as LexicalTextNode).text : '')).join('')
       return (
         <blockquote key={idx} className="border-l-4 border-gray-300 pl-4 italic text-black my-6">
           {text}
@@ -159,10 +164,11 @@ function renderRichText(content?: { root?: LexicalRoot }) {
   })
 }
 
-type PageProps = { params: { slug: string } }
+type PageParams = { slug: string }
 
-export default async function BlogPostPage({ params }: PageProps) {
-  const post = await fetchPostBySlug(params.slug)
+export default async function BlogPostPage({ params }: { params: Promise<PageParams> }) {
+  const resolved = await params
+  const post = await fetchPostBySlug(resolved.slug)
   if (!post) return notFound()
 
   return (
@@ -223,13 +229,13 @@ export default async function BlogPostPage({ params }: PageProps) {
           {Array.isArray(post.gallery) && post.gallery.length > 0 && (
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {post.gallery.map((item, i) => {
-                const media = item.image as any
-                const url: string | undefined = typeof media === 'string' ? media : media?.url
+                const image = item.image
+                const url: string | undefined = typeof image === 'string' ? image : image?.url
                 if (!url) return null
                 return (
                   <figure key={i} className="w-full">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={toMediaUrl(url)} alt={media?.alt || post.title} className="w-full max-w-2xl mx-auto h-auto rounded-lg object-contain" />
+                    <img src={toMediaUrl(url)} alt={(typeof image === 'string' ? post.title : image?.alt) || post.title} className="w-full max-w-2xl mx-auto h-auto rounded-lg object-contain" />
                     {item.caption ? <figcaption className="text-sm text-black mt-2 text-center max-w-2xl mx-auto">{item.caption}</figcaption> : null}
                   </figure>
                 )
@@ -248,13 +254,19 @@ export default async function BlogPostPage({ params }: PageProps) {
               />
             </div>
           )}
-          {!post.video?.oembed && (post.video?.file as any)?.url && (
-            <div className="mt-10 w-full">
-              <video controls className="w-full rounded-lg">
-                <source src={toMediaUrl(((post.video?.file as any)?.url) as string)} />
-              </video>
-            </div>
-          )}
+          {!post.video?.oembed && (() => {
+            const file = post.video?.file
+            const fileUrl = typeof file === 'string' ? file : file?.url
+            return fileUrl
+              ? (
+                <div className="mt-10 w-full">
+                  <video controls className="w-full rounded-lg">
+                    <source src={toMediaUrl(fileUrl)} />
+                  </video>
+                </div>
+              )
+              : null
+          })()}
         </div>
       </div>
     </main>

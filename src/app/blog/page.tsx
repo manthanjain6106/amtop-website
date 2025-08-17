@@ -58,12 +58,15 @@ export default async function BlogPage() {
     return `${payloadBase}${path}`;
   };
   const getAuthorName = (a?: Author | string) => {
-    if (a && typeof a === 'object' && 'name' in a) return (a as any).name || 'Unknown Author';
+    if (a && typeof a === 'object' && 'name' in a) return (a as Author).name || 'Unknown Author';
     return 'Unknown Author';
   };
   const getAuthorAvatarUrl = (a?: Author | string) => {
-    if (a && typeof a === 'object' && (a as any).avatar?.url) {
-      return toMediaUrl((a as any).avatar.url as string);
+    if (a && typeof a === 'object') {
+      const author = a as Author;
+      if (author.avatar?.url) {
+        return toMediaUrl(author.avatar.url);
+      }
     }
     return '';
   };
