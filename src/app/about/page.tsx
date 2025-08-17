@@ -130,12 +130,18 @@ export default function AboutPage() {
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B1C2B] mb-1 text-center" style={{ fontFamily: 'Lora, serif' }}>Anant Dubey</h3>
             <p className="text-base sm:text-lg text-gray-500" style={{ fontFamily: 'Lora, serif' }}>COO</p>
           </div>
-          {/* Third Team Member */}
+          {/* Manthan - CTO */}
           <div className="flex flex-col items-center">
-            <div className="w-48 h-60 sm:w-56 sm:h-70 md:w-64 md:h-80 rounded-xl sm:rounded-2xl shadow-md mb-3 sm:mb-4 overflow-hidden bg-gray-200 flex items-center justify-center">
-              <div className="text-gray-400 text-4xl sm:text-6xl">👤</div>
+            <div className="w-48 h-60 sm:w-56 sm:h-70 md:w-64 md:h-80 rounded-xl sm:rounded-2xl shadow-md mb-3 sm:mb-4 overflow-hidden">
+              <Image
+                src="/images/manthan.jpg"
+                alt="Manthan Jain"
+                width={256}
+                height={320}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B1C2B] mb-1 text-center" style={{ fontFamily: 'Lora, serif' }}>Team Member 3</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B1C2B] mb-1 text-center" style={{ fontFamily: 'Lora, serif' }}>Manthan Jain</h3>
             <p className="text-base sm:text-lg text-gray-500" style={{ fontFamily: 'Lora, serif' }}>CTO</p>
           </div>
           {/* Fourth Team Member */}
@@ -197,9 +203,9 @@ export default function AboutPage() {
                 <div className="flex-shrink-0">
                   {/* Two People Icon - provided SVG, color adjusted */}
                   <svg viewBox="0 0 24 24" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
-                    <path d="M3 18.433C3 16.4308 4.45485 14.7254 6.43204 14.4098L6.61013 14.3814C8.19336 14.1287 9.80664 14.1287 11.3899 14.3814L11.568 14.4098C13.5451 14.7254 15 16.4308 15 18.433C15 19.2984 14.2984 20 13.433 20H4.56697C3.70156 20 3 19.2984 3 18.433Z" stroke="#F7C948" stroke-width="1.5"></path>
-                    <path d="M12.5 7.5C12.5 9.433 10.933 11 9 11C7.067 11 5.5 9.433 5.5 7.5C5.5 5.567 7.067 4 9 4C10.933 4 12.5 5.567 12.5 7.5Z" stroke="#F7C948" stroke-width="1.5"></path>
-                    <path d="M15 11C16.933 11 18.5 9.433 18.5 7.5C18.5 5.567 16.933 4 15 4M17.3899 20H19.433C20.2984 20 21 19.2984 21 18.433C21 16.4308 19.5451 14.7254 17.568 14.4098V14.4098C17.4494 14.3909 17.3293 14.3814 17.2093 14.3814C16.8895 14.3814 16.7902 14.3814 16.2412 14.3814" stroke="#F7C948" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path d="M3 18.433C3 16.4308 4.45485 14.7254 6.43204 14.4098L6.61013 14.3814C8.19336 14.1287 9.80664 14.1287 11.3899 14.3814L11.568 14.4098C13.5451 14.7254 15 16.4308 15 18.433C15 19.2984 14.2984 20 13.433 20H4.56697C3.70156 20 3 19.2984 3 18.433Z" stroke="#F7C948" strokeWidth="1.5"></path>
+                    <path d="M12.5 7.5C12.5 9.433 10.933 11 9 11C7.067 11 5.5 9.433 5.5 7.5C5.5 5.567 7.067 4 9 4C10.933 4 12.5 5.567 12.5 7.5Z" stroke="#F7C948" strokeWidth="1.5"></path>
+                    <path d="M15 11C16.933 11 18.5 9.433 18.5 7.5C18.5 5.567 16.933 4 15 4M17.3899 20H19.433C20.2984 20 21 19.2984 21 18.433C21 16.4308 19.5451 14.7254 17.568 14.4098V14.4098C17.4494 14.3909 17.3293 14.3814 17.2093 14.3814C16.8895 14.3814 16.7902 14.3814 16.2412 14.3814" stroke="#F7C948" strokeWidth="1.5" strokeLinecap="round"></path>
                   </svg>
                 </div>
                 <div className="text-left">
